@@ -7,7 +7,7 @@ offset_left = 558.0
 offset_top = 38.0
 offset_right = 708.0
 offset_bottom = 145.0
-text = "PLAY/ИГРАТЬ"
+text = "хуй"
 text_overrun_behavior = 1
 
 [node name="Quit_BT" type="Button" parent="."]
