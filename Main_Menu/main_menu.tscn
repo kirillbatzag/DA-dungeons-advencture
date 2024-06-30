@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://b5pevcljbpf33"]
+
+[node name="MainMenu" type="Node2D"]
+
+[node name="Start_BT" type="Button" parent="."]
+offset_left = 558.0
+offset_top = 38.0
+offset_right = 708.0
+offset_bottom = 145.0
+text = "PLAY/ИГРАТЬ"
+text_overrun_behavior = 1
+
+[node name="Quit_BT" type="Button" parent="."]
+offset_left = 561.0
+offset_top = 213.0
+offset_right = 711.0
+offset_bottom = 320.0
+text = "EXIT/ВЫЙТИ"
+text_overrun_behavior = 1
