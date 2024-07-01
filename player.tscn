@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=3 uid="uid://dyh0frist7nt3"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_u3feg"]
+[ext_resource type="Texture2D" uid="uid://bn4f1nq8ubx34" path="res://Charcher_TEST/Free_Asset/Soldier/Soldier/Soldier-Walk.png" id="2_6rgbf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3105l"]
+atlas = ExtResource("2_6rgbf")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ytpen"]
+atlas = ExtResource("2_6rgbf")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bykwr"]
+atlas = ExtResource("2_6rgbf")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4x7g"]
+atlas = ExtResource("2_6rgbf")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_duw4b"]
+atlas = ExtResource("2_6rgbf")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usepn"]
+atlas = ExtResource("2_6rgbf")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tkr08"]
+atlas = ExtResource("2_6rgbf")
+region = Rect2(600, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7mhgv"]
+atlas = ExtResource("2_6rgbf")
+region = Rect2(700, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kswlo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3105l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ytpen")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bykwr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4x7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_duw4b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usepn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tkr08")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7mhgv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5cch"]
+size = Vector2(14, 20)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_u3feg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="player"]
+sprite_frames = SubResource("SpriteFrames_kswlo")
+frame_progress = 0.439499
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+position = Vector2(-1, -1)
+shape = SubResource("RectangleShape2D_n5cch")
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+zoom = Vector2(2, 2)
