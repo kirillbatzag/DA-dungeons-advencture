@@ -3,12 +3,12 @@ extends Node2D
 # Предполагаем, что у вас есть узел, который представляет игрока
 @onready var player = $Node2D/player
 # Максимальное количество шагов
-var max_steps = 3
+var max_steps = 10
 # Текущее количество шагов
 var current_steps = 0
 
 # Список центральных точек комнат
-var room_points = [Vector2(100, 100), Vector2(300, 100), Vector2(100, 300), Vector2(300, 300)]
+var room_points = [Vector2(50, 50), Vector2(50, 150), Vector2(100, 265), Vector2(50, 370)]
 
 func _ready():
 	# Инициализация игры
