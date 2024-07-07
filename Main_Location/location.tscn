@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://brsitbyubrmo0"]
+[gd_scene load_steps=7 format=3 uid="uid://brsitbyubrmo0"]
 
 [ext_resource type="Texture2D" uid="uid://ch8lmirfd5wor" path="res://map test/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset.png" id="1_1ulkj"]
 [ext_resource type="Script" path="res://Main_Location/location.gd" id="1_cdju1"]
@@ -110,6 +110,8 @@ texture = ExtResource("1_1ulkj")
 [sub_resource type="TileSet" id="TileSet_h3r2l"]
 sources/0 = SubResource("TileSetAtlasSource_u35pd")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7uwmp"]
+
 [node name="Map" type="Node2D"]
 script = ExtResource("1_cdju1")
 
@@ -120,3 +122,19 @@ layer_0/tile_data = PackedInt32Array(0, 131072, 2, 8, 131072, 2, 16, 131072, 2, 
 
 [node name="CharterBlue" parent="." instance=ExtResource("2_a3bw4")]
 position = Vector2(8, 8)
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(137, 6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-132, 1)
+shape = SubResource("RectangleShape2D_7uwmp")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(274, 12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(630, -4)
+shape = SubResource("RectangleShape2D_7uwmp")
+
+[connection signal="area_entered" from="Area2D2" to="." method="_on_area_2d_2_area_entered"]
