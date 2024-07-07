@@ -1,8 +1,6 @@
 extends Node2D
 
-
-func _on_area_2d_area_entered(area):
-	if area is CharacterBody2D: # Проверяем, что вошедшая область - это игрок
-		print("enter zone") # Вызываем функцию перенаправления
-
-
+func _on_area_2d_body_entered(body):
+	if body.name == "player":
+		print("ZONE PLAYER")
+		body.redirect_on_zone_enter()
