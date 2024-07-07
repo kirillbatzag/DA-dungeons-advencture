@@ -67,8 +67,8 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5cch"]
-size = Vector2(14, 20)
+[sub_resource type="CircleShape2D" id="CircleShape2D_drxjq"]
+radius = 10.0499
 
 [node name="Node2D" type="Node2D"]
 
@@ -83,8 +83,7 @@ frame_progress = 0.439499
 zoom = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
-position = Vector2(-1, -1)
-shape = SubResource("RectangleShape2D_n5cch")
+shape = SubResource("CircleShape2D_drxjq")
 
 [node name="ProgressBar" type="ProgressBar" parent="player"]
 offset_left = -274.0
@@ -98,5 +97,12 @@ offset_top = 84.0
 offset_right = -153.0
 offset_bottom = 150.0
 text = "ROLL DICE"
+
+[node name="Button" type="Button" parent="player"]
+offset_left = 24.0
+offset_top = -16.0
+offset_right = 61.0
+offset_bottom = 16.0
+text = "->"
 
 [connection signal="pressed" from="player/GetHod" to="player" method="_on_get_hod_pressed"]
