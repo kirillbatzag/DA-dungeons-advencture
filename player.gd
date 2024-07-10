@@ -63,5 +63,9 @@ func povorotPlayer():
 	povorot +=1
 	print(povorot)
 
+func povorotPlayer2():
+	povorot -=1
+	print(povorot)
+
 	
 	

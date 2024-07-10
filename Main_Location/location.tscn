@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://brsitbyubrmo0"]
+[gd_scene load_steps=10 format=3 uid="uid://brsitbyubrmo0"]
 
 [ext_resource type="Texture2D" uid="uid://ch8lmirfd5wor" path="res://map test/2D Pixel Dungeon Asset Pack/character and tileset/Dungeon_Tileset.png" id="1_1ulkj"]
 [ext_resource type="Script" path="res://Main_Location/location.gd" id="1_cdju1"]
@@ -333,6 +333,12 @@ sources/0 = SubResource("TileSetAtlasSource_u35pd")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4nqxm"]
 size = Vector2(47, 47)
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_dgt5k"]
+radius = 25.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0lf2m"]
+radius = 26.0
+
 [node name="Map" type="Node2D"]
 script = ExtResource("1_cdju1")
 
@@ -351,15 +357,20 @@ script = ExtResource("3_yfsjk")
 position = Vector2(8, 8)
 shape = SubResource("RectangleShape2D_4nqxm")
 
-[node name="DownArea" type="Area2D" parent="TileMap"]
-script = ExtResource("3_yfsjk")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/DownArea"]
+[node name="Area2D2" type="Area2D" parent="TileMap"]
 position = Vector2(137, 8)
-shape = SubResource("RectangleShape2D_4nqxm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Area2D2"]
+position = Vector2(1, 0)
+shape = SubResource("CircleShape2D_dgt5k")
+
+[node name="Area2D3" type="Area2D" parent="TileMap"]
+position = Vector2(9, 136)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Area2D3"]
+shape = SubResource("CircleShape2D_0lf2m")
 
 [connection signal="area_entered" from="TileMap/Area2D" to="." method="_on_area_2d_area_entered"]
 [connection signal="body_entered" from="TileMap/Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="area_entered" from="TileMap/DownArea" to="." method="_on_area_2d_area_entered"]
-[connection signal="body_entered" from="TileMap/DownArea" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_entered" from="TileMap/DownArea" to="." method="_on_down_area_body_entered"]
+[connection signal="body_entered" from="TileMap/Area2D2" to="." method="_on_area_2d_2_body_entered"]
+[connection signal="body_entered" from="TileMap/Area2D3" to="." method="_on_area_2d_3_body_entered"]
