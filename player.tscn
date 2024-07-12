@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dyh0frist7nt3"]
+[gd_scene load_steps=15 format=3 uid="uid://dyh0frist7nt3"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_u3feg"]
 [ext_resource type="Texture2D" uid="uid://bn4f1nq8ubx34" path="res://Charcher_TEST/Free_Asset/Soldier/Soldier/Soldier-Walk.png" id="2_6rgbf"]
@@ -70,6 +70,10 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_drxjq"]
 radius = 10.0499
 
+[sub_resource type="Theme" id="Theme_hqtc2"]
+
+[sub_resource type="Theme" id="Theme_k3p4u"]
+
 [node name="Node2D" type="Node2D"]
 
 [node name="player" type="CharacterBody2D" parent="."]
@@ -103,6 +107,7 @@ offset_left = 24.0
 offset_top = -16.0
 offset_right = 61.0
 offset_bottom = 16.0
+theme = SubResource("Theme_hqtc2")
 text = "->"
 
 [node name="Button_Left" type="Button" parent="player"]
@@ -110,6 +115,7 @@ offset_left = -59.0
 offset_top = -15.0
 offset_right = -23.0
 offset_bottom = 18.0
+theme = SubResource("Theme_k3p4u")
 text = "<-"
 
 [node name="Button_Up" type="Button" parent="player"]
