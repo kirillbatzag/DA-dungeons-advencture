@@ -60,11 +60,11 @@ func redirect_down():
 	move_and_slide() # Это обновит позицию персонажа в физическом мире
 	
 func povorotPlayer():
-	povorot +=1
+	povorot = 1
 	print(povorot)
 
 func povorotPlayer2():
-	povorot -=1
+	povorot = -1
 	print(povorot)
 
 	

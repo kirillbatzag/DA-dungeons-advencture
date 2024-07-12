@@ -98,11 +98,32 @@ offset_right = -153.0
 offset_bottom = 150.0
 text = "ROLL DICE"
 
-[node name="Button" type="Button" parent="player"]
+[node name="Button_Rignt" type="Button" parent="player"]
 offset_left = 24.0
 offset_top = -16.0
 offset_right = 61.0
 offset_bottom = 16.0
 text = "->"
+
+[node name="Button_Left" type="Button" parent="player"]
+offset_left = -59.0
+offset_top = -15.0
+offset_right = -23.0
+offset_bottom = 18.0
+text = "<-"
+
+[node name="Button_Up" type="Button" parent="player"]
+offset_left = -15.0
+offset_top = -56.0
+offset_right = 15.0
+offset_bottom = -27.0
+text = "Up"
+
+[node name="Button" type="Button" parent="player"]
+offset_left = -27.0
+offset_top = 21.0
+offset_right = 26.0
+offset_bottom = 54.0
+text = "Down"
 
 [connection signal="pressed" from="player/GetHod" to="player" method="_on_get_hod_pressed"]
